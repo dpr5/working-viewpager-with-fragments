@@ -1,0 +1,26 @@
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.android.android_me.R;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Tab1 tab1 = new Tab1();
+        tab1.setTest1("Testing, it worked!!!");
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), 3);
+
+
+        viewPager.setAdapter(adapter);
+
+    }
+
+
+}
